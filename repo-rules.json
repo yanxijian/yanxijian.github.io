@@ -125,5 +125,8 @@
       "\\*\\.yml\\s+text eol=lf",
       "\\*\\.py\\s+text eol=lf"
     ]
+  },
+  "commit_message": {
+    "english": true
   }
 }
