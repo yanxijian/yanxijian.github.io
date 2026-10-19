@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects &amp; docs · Xijian Yan</title>
+<meta name="description" content="Public projects by Xijian Yan: C++/Qt libraries and tools, a Windows Shell extension, a repository hygiene checker, plus archived experiments.">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="alternate" hreflang="zh" href="https://yanxijian.github.io/zh/">
+<link rel="alternate" hreflang="en" href="https://yanxijian.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://yanxijian.github.io/">
+<script src="/assets/site.js"></script>
+</head>
+<body>
+<header>
+  <h1>Xijian Yan <span class="sub">projects &amp; docs</span></h1>
+  <nav class="lang" aria-label="Language">
+    <strong>English</strong><span class="sep" aria-hidden="true">·</span><a href="/zh/" hreflang="zh" lang="zh-CN" data-set-lang="zh">简体中文</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>Main projects</h2>
+    <ul class="repos">
+      <li>
+        <a class="name" href="https://github.com/yanxijian/recursive-shared-mutex"><code>recursive-shared-mutex</code></a>
+        <span class="desc">C++17 header-only recursive shared mutex, for migrating from <code>recursive_mutex</code> to reader/writer locks.</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/recursive-shared-mutex/blob/HEAD/README.md">English</a>
+          <a class="tag" href="https://github.com/yanxijian/recursive-shared-mutex/blob/HEAD/README.zh-CN.md">中文</a>
+        </span>
+      </li>
+      <li>
+        <a class="name" href="https://github.com/yanxijian/MultiProcessShell"><code>MultiProcessShell</code></a>
+        <span class="desc">Multi-process Qt shell: host window, tab lifecycle, native window embedding and Protobuf IPC.</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/MultiProcessShell/blob/HEAD/README.en.md">English</a>
+          <a class="tag" href="https://github.com/yanxijian/MultiProcessShell/blob/HEAD/README.md">中文</a>
+        </span>
+      </li>
+      <li>
+        <a class="name" href="https://github.com/yanxijian/Volition"><code>Volition</code></a>
+        <span class="desc">Multi-format document reader/editor built on MultiProcessShell, one client per format.</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/Volition/blob/HEAD/README.en.md">English</a>
+          <a class="tag" href="https://github.com/yanxijian/Volition/blob/HEAD/README.md">中文</a>
+        </span>
+      </li>
+      <li>
+        <a class="name" href="https://github.com/yanxijian/QThemeEngine"><code>QThemeEngine</code></a>
+        <span class="desc">Qt Widgets theming runtime: ThemeStore + QThemeStyle, drawing-based instead of QSS.</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/QThemeEngine/blob/HEAD/README.en.md">English</a>
+          <a class="tag" href="https://github.com/yanxijian/QThemeEngine/blob/HEAD/README.md">中文</a>
+        </span>
+      </li>
+      <li>
+        <a class="name" href="https://github.com/yanxijian/QFluentRibbon"><code>QFluentRibbon</code></a>
+        <span class="desc">Office-like Ribbon for Qt Widgets, with appearance driven by QThemeEngine.</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/QFluentRibbon/blob/HEAD/README.en.md">English</a>
+          <a class="tag" href="https://github.com/yanxijian/QFluentRibbon/blob/HEAD/README.md">中文</a>
+        </span>
+      </li>
+      <li>
+        <a class="name" href="https://github.com/yanxijian/ShellExtContextMenuHandler"><code>ShellExtContextMenuHandler</code></a>
+        <span class="desc">Configurable Windows Explorer context-menu extension (C++17/COM): JSON menus, SVG icons, transactional registration.</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/ShellExtContextMenuHandler/blob/HEAD/README.en.md">English</a>
+          <a class="tag" href="https://github.com/yanxijian/ShellExtContextMenuHandler/blob/HEAD/README.md">中文</a>
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Tools &amp; conventions</h2>
+    <ul class="repos">
+      <li>
+        <a class="name" href="https://github.com/yanxijian/RepoRules"><code>RepoRules</code></a>
+        <span class="desc">Mechanical repository hygiene checker (Python 3.9+): encoding and line endings, line width, version sync, links and bilingual pairs.</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/RepoRules/blob/HEAD/README.en.md">English</a>
+          <a class="tag" href="https://github.com/yanxijian/RepoRules/blob/HEAD/README.md">中文</a>
+        </span>
+      </li>
+      <li>
+        <a class="name" href="https://github.com/yanxijian/EngineeringPlaybook"><code>EngineeringPlaybook</code></a>
+        <span class="desc">Reusable design-review protocol, role instructions, templates and a document-structure checker.</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/EngineeringPlaybook/blob/HEAD/README.md">中文</a>
+          <span class="tag">中文 only</span>
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Build &amp; dependencies</h2>
+    <ul class="repos">
+      <li>
+        <a class="name" href="https://github.com/yanxijian/pdfium_all"><code>pdfium_all</code></a>
+        <span class="desc">PDFium CMake build wrapper, pinned third-party dependencies and staged SDK output.</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/pdfium_all/blob/HEAD/README.md">中文</a>
+          <span class="tag">中文 only</span>
+        </span>
+      </li>
+      <li>
+        <a class="name" href="https://github.com/yanxijian/AbseilPin"><code>AbseilPin</code></a>
+        <span class="desc">Pins one shared <code>abseil_dll</code> for MPS and pdfium_all so the ABI stays consistent.</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/AbseilPin/blob/HEAD/README.md">中文</a>
+          <span class="tag">中文 only</span>
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Others</h2>
+    <ul class="repos">
+      <li>
+        <a class="name" href="https://github.com/yanxijian/anitabi_GoogleMaps"><code>anitabi_GoogleMaps</code></a>
+        <span class="desc">Exports anitabi pilgrimage maps as KML that Google My Maps can import.</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/anitabi_GoogleMaps/blob/HEAD/README.md">中文</a>
+          <span class="tag">中文 only</span>
+        </span>
+      </li>
+      <li>
+        <a class="name" href="https://github.com/yanxijian/phonedata"><code>phonedata</code></a>
+        <span class="desc">Phone-number attribution library; data frozen at July 2017, kept as a format and parsing reference.</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/phonedata/blob/HEAD/README.md">中文</a>
+          <span class="tag">中文 only</span>
+          <span class="tag tag-archived">archived</span>
+        </span>
+      </li>
+      <li>
+        <a class="name" href="https://github.com/yanxijian/LibRtf"><code>LibRtf</code></a>
+        <span class="desc">RTF-to-text C++ library with an <code>rtf2txt</code> CLI; <code>c/</code> is LGPL upstream code.</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/LibRtf/blob/HEAD/README.md">中文</a>
+          <span class="tag">中文 only</span>
+          <span class="tag tag-archived">archived</span>
+        </span>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Every link points at a repository README; this site is an index and keeps no copy of the docs.
+     Site source: <a href="https://github.com/yanxijian/yanxijian.github.io">yanxijian.github.io</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,204 @@
+/* 站点样式：无外部字体、无 CDN、无构建。
+ * 颜色跟随系统主题，中文优先使用系统自带的中文字体。 */
+
+:root {
+  color-scheme: light dark;
+  --fg: #1f2328;
+  --muted: #59636e;
+  --bg: #ffffff;
+  --line: #d1d9e0;
+  --accent: #0969da;
+  --tag-bg: #eaeef2;
+  --tag-fg: #59636e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e6edf3;
+    --muted: #9198a1;
+    --bg: #0d1117;
+    --line: #30363d;
+    --accent: #4493f8;
+    --tag-bg: #21262d;
+    --tag-fg: #9198a1;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 2.5rem 1.25rem 4rem;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+main,
+header,
+footer {
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+  line-height: 1.35;
+}
+
+h1 .sub {
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+h2 {
+  margin: 2.25rem 0 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.lang {
+  color: var(--muted);
+  font-size: 0.925rem;
+  white-space: nowrap;
+}
+
+.lang strong {
+  color: var(--fg);
+}
+
+.sep {
+  padding: 0 0.25rem;
+  color: var(--muted);
+}
+
+ul.repos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.repos > li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+ul.repos > li:last-child {
+  border-bottom: 0;
+}
+
+.name {
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-weight: 600;
+}
+
+.name code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  font-size: 0.95em;
+}
+
+.desc {
+  display: block;
+  color: var(--muted);
+  font-size: 0.925rem;
+}
+
+.tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.tag {
+  padding: 0.05rem 0.45rem;
+  border-radius: 999px;
+  background: var(--tag-bg);
+  color: var(--tag-fg);
+  white-space: nowrap;
+}
+
+.tag-archived {
+  background: transparent;
+  border: 1px solid var(--line);
+}
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/* 根页：语言选择兜底 */
+body.root {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+body.root main {
+  width: 100%;
+  text-align: center;
+}
+
+body.root .choose {
+  margin: 0.75rem 0 0.5rem;
+  color: var(--muted);
+}
+
+body.root .choices {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+body.root .note {
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
