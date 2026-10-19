@@ -28,7 +28,7 @@ tests/site.test.js    unit tests for site.js
 
 Highest priority first:
 
-1. `?lang=zh` / `?lang=en` in the URL;
+1. `?lang=zh` / `?lang=en` in the **root** page URL (for example `/?lang=en`);
 2. the stored `localStorage` value (written when a switch link is clicked);
 3. `navigator.language` (`zh-CN`, `zh-TW`, `zh-Hans` all map to `zh`; `en-*` maps to `en`);
 4. English as the fallback.
@@ -36,7 +36,8 @@ Highest priority first:
 Deliberate constraints:
 
 - **Only the root page redirects.** `/zh/` and `/en/` never rewrite their own URL, so shared
-  deep links stay where the sender put them.
+  deep links stay where the sender put them (which also means `?lang=` is only meaningful on the
+  root page; content pages use the switch link).
 - The redirect uses `location.replace`, so it adds no history entry and the back button behaves.
 - Language switches are plain links and **do not require JavaScript**; JS only records the choice.
 - If `localStorage` is unavailable (private mode, disabled storage) it degrades silently.
