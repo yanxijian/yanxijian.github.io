@@ -1,5 +1,6 @@
-# 默认按文本处理，换行统一
-* text=auto
+# 默认按文本处理并统一检出为 LF（否则 Windows 上 core.autocrlf=true 时
+# 工作区会变成 CRLF，撞上 repo-rules.json 里的 eol=lf 规则）
+* text=auto eol=lf
 
 *.html   text eol=lf
 *.css    text eol=lf
@@ -8,6 +9,7 @@
 *.json   text eol=lf
 *.yml    text eol=lf
 *.sh     text eol=lf
+*.py     text eol=lf
 LICENSE  text eol=lf
 .gitattributes text eol=lf
 .nojekyll      text eol=lf

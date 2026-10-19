@@ -111,10 +111,11 @@
   "gitattributes": {
     "path": ".gitattributes",
     "required_patterns": [
-      "\\* text=auto",
+      "\\* text=auto eol=lf",
       "\\*\\.html\\s+text eol=lf",
       "\\*\\.js\\s+text eol=lf",
-      "\\*\\.yml\\s+text eol=lf"
+      "\\*\\.yml\\s+text eol=lf",
+      "\\*\\.py\\s+text eol=lf"
     ]
   }
 }
