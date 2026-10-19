@@ -2,6 +2,8 @@
 
 **한국어** · [English](README.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md)
 
+<!-- translated-from: README.md sha256:6a9e00fc5f79 -->
+
 공개 프로젝트의 개인 색인입니다. 안내만 하며 문서를 복제해 두지는 않습니다.
 
 사이트: <https://yanxijian.github.io/>

@@ -2,6 +2,8 @@
 
 **简体中文** · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
 
+<!-- translated-from: README.md sha256:6a9e00fc5f79 -->
+
 个人项目索引站：只做导航，不放文档副本。
 
 站点地址：<https://yanxijian.github.io/>

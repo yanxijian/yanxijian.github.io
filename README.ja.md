@@ -2,6 +2,8 @@
 
 **日本語** · [English](README.md) · [简体中文](README.zh-CN.md) · [한국어](README.ko.md)
 
+<!-- translated-from: README.md sha256:6a9e00fc5f79 -->
+
 公開プロジェクトの個人的な索引です。案内だけを目的としており、ドキュメントの複製は置いていません。
 
 サイト：<https://yanxijian.github.io/>
