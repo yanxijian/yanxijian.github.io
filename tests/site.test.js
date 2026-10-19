@@ -7,7 +7,7 @@ const assert = require('node:assert');
 
 const site = require('../assets/site.js');
 
-test('normalize 把浏览器语言码收敛到 zh / en', () => {
+test('normalize 把浏览器语言码收敛到 zh / en / ja / ko', () => {
   assert.equal(site.normalize('zh'), 'zh');
   assert.equal(site.normalize('zh-CN'), 'zh');
   assert.equal(site.normalize('zh-TW'), 'zh');
@@ -16,6 +16,10 @@ test('normalize 把浏览器语言码收敛到 zh / en', () => {
   assert.equal(site.normalize('en'), 'en');
   assert.equal(site.normalize('en-US'), 'en');
   assert.equal(site.normalize('en-GB'), 'en');
+  assert.equal(site.normalize('ja'), 'ja');
+  assert.equal(site.normalize('ja-JP'), 'ja');
+  assert.equal(site.normalize('ko'), 'ko');
+  assert.equal(site.normalize('ko-KR'), 'ko');
   assert.equal(site.normalize('fr-FR'), null);
   assert.equal(site.normalize(''), null);
   assert.equal(site.normalize(null), null);
@@ -32,6 +36,9 @@ test('choose 的优先级：显式 > 已存偏好 > 浏览器 > 默认', () => {
   // 浏览器语言
   assert.equal(site.choose(null, null, 'zh-CN'), 'zh');
   assert.equal(site.choose(null, null, 'en-US'), 'en');
+  assert.equal(site.choose(null, null, 'ja-JP'), 'ja');
+  assert.equal(site.choose(null, null, 'ko-KR'), 'ko');
+  assert.equal(site.choose('ja', 'zh', 'en-US'), 'ja');
   // 显式值非法时继续往下找
   assert.equal(site.choose('fr-FR', null, 'zh-CN'), 'zh');
   assert.equal(site.choose('fr-FR', 'en', 'zh-CN'), 'en');
@@ -59,6 +66,8 @@ test('isRootPage 只在根页返回 true', () => {
   assert.equal(site.isRootPage('/index.html'), true);
   assert.equal(site.isRootPage('/zh/'), false);
   assert.equal(site.isRootPage('/en/'), false);
+  assert.equal(site.isRootPage('/ja/'), false);
+  assert.equal(site.isRootPage('/ko/'), false);
   assert.equal(site.isRootPage('/zh/index.html'), false);
   assert.equal(site.isRootPage('/assets/site.js'), false);
 });
@@ -68,9 +77,11 @@ test('targetFor 保留 hash', () => {
   assert.equal(site.targetFor('en'), '/en/');
   assert.equal(site.targetFor('zh', ''), '/zh/');
   assert.equal(site.targetFor('en', '#top'), '/en/#top');
+  assert.equal(site.targetFor('ja'), '/ja/');
+  assert.equal(site.targetFor('ko', '#top'), '/ko/#top');
 });
 
 test('支持的语言与存储键保持稳定', () => {
-  assert.deepEqual(site.LANGUAGES, ['zh', 'en']);
+  assert.deepEqual(site.LANGUAGES, ['zh', 'en', 'ja', 'ko']);
   assert.equal(site.STORAGE_KEY, 'lang');
 });

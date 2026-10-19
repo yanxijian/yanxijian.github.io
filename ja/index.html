@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プロジェクトとドキュメント · Xijian Yan</title>
+<meta name="description" content="Xijian Yan の公開プロジェクト索引：C++/Qt のライブラリとツール、Windows Shell 拡張、リポジトリ衛生チェッカー、そしてアーカイブした旧作。">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="alternate" hreflang="zh" href="https://yanxijian.github.io/zh/">
+<link rel="alternate" hreflang="en" href="https://yanxijian.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yanxijian.github.io/ja/">
+<link rel="alternate" hreflang="ko" href="https://yanxijian.github.io/ko/">
+<link rel="alternate" hreflang="x-default" href="https://yanxijian.github.io/">
+<script src="/assets/site.js"></script>
+</head>
+<body>
+<header>
+  <h1>Xijian Yan <span class="sub">プロジェクトとドキュメント</span></h1>
+  <nav class="lang" aria-label="言語">
+    <strong>日本語</strong><span class="sep" aria-hidden="true">·</span><a href="/en/" hreflang="en" lang="en" data-set-lang="en">English</a><span class="sep" aria-hidden="true">·</span><a href="/zh/" hreflang="zh" lang="zh-CN" data-set-lang="zh">简体中文</a><span class="sep" aria-hidden="true">·</span><a href="/ko/" hreflang="ko" lang="ko" data-set-lang="ko">한국어</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>主なプロジェクト</h2>
+    <ul class="repos">
+      <li>
+        <a class="name" href="https://github.com/yanxijian/recursive-shared-mutex"><code>recursive-shared-mutex</code></a>
+        <span class="desc">C++17 のヘッダーオンリーな再入可能 <code>shared_mutex</code>。<code>recursive_mutex</code> から読み書きロックへ移行できます。</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/recursive-shared-mutex/blob/HEAD/README.md">English</a>
+          <a class="tag" href="https://github.com/yanxijian/recursive-shared-mutex/blob/HEAD/README.zh-CN.md">中文</a>
+        </span>
+      </li>
+      <li>
+        <a class="name" href="https://github.com/yanxijian/MultiProcessShell"><code>MultiProcessShell</code></a>
+        <span class="desc">マルチプロセスな Qt シェル：Host ウィンドウ、タブのライフサイクル、ネイティブウィンドウの埋め込み、Protobuf IPC。</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/MultiProcessShell/blob/HEAD/README.md">English</a>
+          <a class="tag" href="https://github.com/yanxijian/MultiProcessShell/blob/HEAD/README.zh-CN.md">中文</a>
+          <a class="tag" href="https://github.com/yanxijian/MultiProcessShell/blob/HEAD/README.ja.md">日本語</a>
+          <a class="tag" href="https://github.com/yanxijian/MultiProcessShell/blob/HEAD/README.ko.md">한국어</a>
+        </span>
+      </li>
+      <li>
+        <a class="name" href="https://github.com/yanxijian/Volition"><code>Volition</code></a>
+        <span class="desc">MultiProcessShell 上の多形式ドキュメント閲覧／編集アプリ。形式ごとに Client を分けています。</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/Volition/blob/HEAD/README.md">English</a>
+          <a class="tag" href="https://github.com/yanxijian/Volition/blob/HEAD/README.zh-CN.md">中文</a>
+          <a class="tag" href="https://github.com/yanxijian/Volition/blob/HEAD/README.ja.md">日本語</a>
+          <a class="tag" href="https://github.com/yanxijian/Volition/blob/HEAD/README.ko.md">한국어</a>
+        </span>
+      </li>
+      <li>
+        <a class="name" href="https://github.com/yanxijian/QThemeEngine"><code>QThemeEngine</code></a>
+        <span class="desc">Qt Widgets のテーマランタイム：ThemeStore + QThemeStyle。QSS ではなく描画でテーマを当てます。</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/QThemeEngine/blob/HEAD/README.md">English</a>
+          <a class="tag" href="https://github.com/yanxijian/QThemeEngine/blob/HEAD/README.zh-CN.md">中文</a>
+          <a class="tag" href="https://github.com/yanxijian/QThemeEngine/blob/HEAD/README.ja.md">日本語</a>
+          <a class="tag" href="https://github.com/yanxijian/QThemeEngine/blob/HEAD/README.ko.md">한국어</a>
+        </span>
+      </li>
+      <li>
+        <a class="name" href="https://github.com/yanxijian/QFluentRibbon"><code>QFluentRibbon</code></a>
+        <span class="desc">Qt Widgets 向けの Office 風リボン。見た目は QThemeEngine が駆動します。</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/QFluentRibbon/blob/HEAD/README.md">English</a>
+          <a class="tag" href="https://github.com/yanxijian/QFluentRibbon/blob/HEAD/README.zh-CN.md">中文</a>
+          <a class="tag" href="https://github.com/yanxijian/QFluentRibbon/blob/HEAD/README.ja.md">日本語</a>
+          <a class="tag" href="https://github.com/yanxijian/QFluentRibbon/blob/HEAD/README.ko.md">한국어</a>
+        </span>
+      </li>
+      <li>
+        <a class="name" href="https://github.com/yanxijian/ShellExtContextMenuHandler"><code>ShellExtContextMenuHandler</code></a>
+        <span class="desc">設定可能な Windows エクスプローラーのコンテキストメニュー拡張（C++17/COM）：JSON メニュー、SVG アイコン、失敗時に巻き戻す登録。</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/ShellExtContextMenuHandler/blob/HEAD/README.md">English</a>
+          <a class="tag" href="https://github.com/yanxijian/ShellExtContextMenuHandler/blob/HEAD/README.zh-CN.md">中文</a>
+          <a class="tag" href="https://github.com/yanxijian/ShellExtContextMenuHandler/blob/HEAD/README.ja.md">日本語</a>
+          <a class="tag" href="https://github.com/yanxijian/ShellExtContextMenuHandler/blob/HEAD/README.ko.md">한국어</a>
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>ツールと取り決め</h2>
+    <ul class="repos">
+      <li>
+        <a class="name" href="https://github.com/yanxijian/RepoRules"><code>RepoRules</code></a>
+        <span class="desc">機械的なリポジトリ衛生チェッカー（Python 3.9 以降）：文字コードと改行、桁幅、バージョン同期、リンク、多言語ドキュメント。</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/RepoRules/blob/HEAD/README.md">English</a>
+          <a class="tag" href="https://github.com/yanxijian/RepoRules/blob/HEAD/README.zh-CN.md">中文</a>
+          <a class="tag" href="https://github.com/yanxijian/RepoRules/blob/HEAD/README.ja.md">日本語</a>
+          <a class="tag" href="https://github.com/yanxijian/RepoRules/blob/HEAD/README.ko.md">한국어</a>
+        </span>
+      </li>
+      <li>
+        <a class="name" href="https://github.com/yanxijian/EngineeringPlaybook"><code>EngineeringPlaybook</code></a>
+        <span class="desc">再利用できる設計レビューのプロトコル、役割ごとの指示、テンプレート、文書の構造チェッカー。</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/EngineeringPlaybook/blob/HEAD/README.md">English</a>
+          <a class="tag" href="https://github.com/yanxijian/EngineeringPlaybook/blob/HEAD/README.zh-CN.md">中文</a>
+          <a class="tag" href="https://github.com/yanxijian/EngineeringPlaybook/blob/HEAD/README.ja.md">日本語</a>
+          <a class="tag" href="https://github.com/yanxijian/EngineeringPlaybook/blob/HEAD/README.ko.md">한국어</a>
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>ビルドと依存</h2>
+    <ul class="repos">
+      <li>
+        <a class="name" href="https://github.com/yanxijian/pdfium_all"><code>pdfium_all</code></a>
+        <span class="desc">PDFium を CMake でビルドするためのラッパー。サードパーティを固定し、SDK を stage して出力します。</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/pdfium_all/blob/HEAD/README.md">中文</a>
+          <span class="tag">中文のみ</span>
+        </span>
+      </li>
+      <li>
+        <a class="name" href="https://github.com/yanxijian/AbseilPin"><code>AbseilPin</code></a>
+        <span class="desc">MPS と pdfium_all で共有する <code>abseil_dll</code> を 1 つに固定し、ABI を揃えます。</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/AbseilPin/blob/HEAD/README.md">中文</a>
+          <span class="tag">中文のみ</span>
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>その他</h2>
+    <ul class="repos">
+      <li>
+        <a class="name" href="https://github.com/yanxijian/anitabi_GoogleMaps"><code>anitabi_GoogleMaps</code></a>
+        <span class="desc">anitabi の聖地巡礼マップを、Google My Maps に読み込める KML として書き出します。</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/anitabi_GoogleMaps/blob/HEAD/README.md">English</a>
+          <a class="tag" href="https://github.com/yanxijian/anitabi_GoogleMaps/blob/HEAD/README.zh-CN.md">中文</a>
+          <a class="tag" href="https://github.com/yanxijian/anitabi_GoogleMaps/blob/HEAD/README.ja.md">日本語</a>
+          <a class="tag" href="https://github.com/yanxijian/anitabi_GoogleMaps/blob/HEAD/README.ko.md">한국어</a>
+        </span>
+      </li>
+      <li>
+        <a class="name" href="https://github.com/yanxijian/phonedata"><code>phonedata</code></a>
+        <span class="desc">電話番号の帰属を引くライブラリ。データは 2017 年 7 月で固定し、形式と解析の参考として残しています。</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/phonedata/blob/HEAD/README.md">中文</a>
+          <span class="tag tag-archived">アーカイブ済み</span>
+        </span>
+      </li>
+      <li>
+        <a class="name" href="https://github.com/yanxijian/LibRtf"><code>LibRtf</code></a>
+        <span class="desc">RTF をテキストにする C++ ライブラリと <code>rtf2txt</code> コマンド。 <code>c/</code> は LGPL の上流コードです。</span>
+        <span class="tags">
+          <a class="tag" href="https://github.com/yanxijian/LibRtf/blob/HEAD/README.md">中文</a>
+          <span class="tag tag-archived">アーカイブ済み</span>
+        </span>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>リンクはすべて各リポジトリの README を指します。このサイトは索引であり、ドキュメントの複製は置いていません。
+     サイトのソース：<a href="https://github.com/yanxijian/yanxijian.github.io">yanxijian.github.io</a>。</p>
+</footer>
+</body>
+</html>

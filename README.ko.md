@@ -8,8 +8,10 @@
 
 - English: <https://yanxijian.github.io/en/>
 - 中文: <https://yanxijian.github.io/zh/>
+- 日本語: <https://yanxijian.github.io/ja/>
+- 한국어: <https://yanxijian.github.io/ko/>
 
-빌드 단계도, 서드파티 의존성도, CDN도 없습니다. 정적 페이지 세 장, 스타일시트 하나, 스크립트 하나뿐이며 GitHub Pages가 `main` 루트에서 그대로 서비스합니다(`.nojekyll`이 Jekyll을 끕니다).
+빌드 단계도, 서드파티 의존성도, CDN도 없습니다. 정적 페이지 다섯 장, 스타일시트 하나, 스크립트 하나뿐이며 GitHub Pages가 `main` 루트에서 그대로 서비스합니다(`.nojekyll`이 Jekyll을 끕니다).
 
 ## 구조
 
@@ -17,6 +19,8 @@
 index.html            루트 페이지: 언어 분기와 클릭 가능한 링크(JS 없이도 동작)
 zh/index.html         중국어 색인
 en/index.html         영어 색인
+ja/index.html         일본어 색인
+ko/index.html         한국어 색인
 assets/style.css      스타일(OS 색 구성표를 따르고 CJK는 시스템 글꼴 우선)
 assets/site.js        루트 분기와 선택 언어 기억
 tests/site.test.js    site.js 단위 테스트
@@ -27,22 +31,23 @@ tests/site.test.js    site.js 단위 테스트
 
 우선순위가 높은 것부터:
 
-1. **루트** 페이지 URL의 `?lang=zh` / `?lang=en`(예: `/?lang=en`)
+1. **루트** 페이지 URL의 `?lang=zh` / `?lang=en` / `?lang=ja` / `?lang=ko`(예: `/?lang=ja`)
 2. 저장된 `localStorage` 값(전환 링크를 누를 때 기록)
-3. `navigator.language`(`zh-CN`, `zh-TW`, `zh-Hans`는 모두 `zh`. `en-*`는 `en`)
+3. `navigator.language`(`zh-CN`, `zh-TW`, `zh-Hans`는 `zh`, `en-*`는 `en`,
+   `ja-*`는 `ja`, `ko-*`는 `ko`)
 4. 아무것도 없으면 영어
 
 의도한 제약:
 
-- **분기하는 것은 루트 페이지뿐**입니다. `/zh/`와 `/en/`은 자기 URL을 바꾸지 않으므로 공유된 깊은 링크는 보낸 사람이 둔 자리에 그대로 남습니다(즉 `?lang=`은 루트 페이지에서만 의미가 있고, 내용 페이지는 전환 링크를 씁니다).
+- **분기하는 것은 루트 페이지뿐**입니다. `/zh/`, `/en/`, `/ja/`, `/ko/`는 자기 URL을 바꾸지 않으므로 공유된 깊은 링크는 보낸 사람이 둔 자리에 그대로 남습니다(즉 `?lang=`은 루트 페이지에서만 의미가 있고, 내용 페이지는 전환 링크를 씁니다).
 - 분기는 `location.replace`를 쓰므로 방문 기록을 늘리지 않고 뒤로 가기도 자연스럽습니다.
 - 언어 전환은 그냥 링크이며 **JavaScript가 필요 없습니다**. JS는 선택을 기록할 뿐입니다.
 - `localStorage`를 쓸 수 없으면(시크릿 모드, 저장소 비활성) 조용히 포기합니다.
-- 루트 페이지에는 눈에 보이는 이중 언어 링크와 `hreflang` 대체를 남기므로 크롤러와 JS 없는 방문자에게도 입구가 있습니다.
+- 루트 페이지에는 눈에 보이는 네 언어 링크와 `hreflang` 대체를 남기므로 크롤러와 JS 없는 방문자에게도 입구가 있습니다.
 
 ## 프로젝트 추가
 
-`zh/index.html`과 `en/index.html` 두 파일을 고치고 각각에 `<li>` 하나를 넣습니다:
+네 개의 내용 페이지(`zh/`, `en/`, `ja/`, `ko/`의 `index.html`)를 고치고 각각에 `<li>` 하나를 넣습니다:
 
 ```html
 <li>
@@ -105,4 +110,4 @@ git config core.hooksPath .githooks
 
 - `zh-TW` / `zh-HK`는 지금은 중국어 간체 페이지로 갑니다(번체판이 없음).
 - 이 사이트는 색인이며 README를 **복제하지 않습니다**. 장점은 문서 사본 두 개가 어긋날 일이 없다는 것, 대가는 링크를 따라가면 이 사이트를 떠난다는 것입니다.
-- 이 README는 네 언어로 유지하지만, 사이트 자체가 제공하는 언어는 아직 中文과 English 두 가지입니다.
+- 사이트 자체도 네 언어(中文, English, 日本語, 한국어)를 제공합니다. `zh-TW` / `zh-HK`는 지금도 중국어 간체 페이지로 갑니다.

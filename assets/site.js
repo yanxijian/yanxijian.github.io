@@ -11,11 +11,12 @@
 (function () {
   'use strict';
 
-  var LANGUAGES = ['zh', 'en'];
+  var LANGUAGES = ['zh', 'en', 'ja', 'ko'];
   var DEFAULT_LANGUAGE = 'en';
   var STORAGE_KEY = 'lang';
 
-  // 'zh' / 'zh-CN' / 'zh-TW' / 'zh-Hans' -> 'zh'；'en-US' -> 'en'；其它 -> null
+  // 'zh' / 'zh-CN' / 'zh-TW' / 'zh-Hans' -> 'zh'；'en-US' -> 'en'；
+  // 'ja' / 'ja-JP' -> 'ja'；'ko' / 'ko-KR' -> 'ko'；其它 -> null
   function normalize(tag) {
     if (tag === null || tag === undefined) {
       return null;

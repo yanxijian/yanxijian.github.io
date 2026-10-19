@@ -8,8 +8,10 @@
 
 - 中文：<https://yanxijian.github.io/zh/>
 - English: <https://yanxijian.github.io/en/>
+- 日本語：<https://yanxijian.github.io/ja/>
+- 한국어：<https://yanxijian.github.io/ko/>
 
-这里没有构建步骤、没有第三方依赖、没有 CDN：三个静态页面 + 一个 CSS + 一个 JS 文件，
+这里没有构建步骤、没有第三方依赖、没有 CDN：五个静态页面 + 一个 CSS + 一个 JS 文件，
 由 GitHub Pages 直接从 `main` 分支根目录托管（`.nojekyll` 关闭 Jekyll 处理）。
 
 ## 目录
@@ -18,6 +20,8 @@
 index.html            根页：按语言偏好跳转，同时提供可点击的双语链接（无 JS 兜底）
 zh/index.html         中文索引
 en/index.html         英文索引
+ja/index.html         日文索引
+ko/index.html         韩文索引
 assets/style.css      样式（跟随系统深浅色，系统中文字体优先）
 assets/site.js        根页跳转 + 语言偏好记忆
 tests/site.test.js    site.js 的单元测试
@@ -28,23 +32,24 @@ tests/site.test.js    site.js 的单元测试
 
 按优先级从高到低：
 
-1. **根页**地址里的 `?lang=zh` / `?lang=en`（例如 `/?lang=en`）；
+1. **根页**地址里的 `?lang=zh` / `?lang=en` / `?lang=ja` / `?lang=ko`（例如 `/?lang=ja`）；
 2. `localStorage` 里记住的上次选择（点过切换链接即写入）；
-3. `navigator.language`（`zh-CN`、`zh-TW`、`zh-Hans` 都归到 `zh`，`en-*` 归到 `en`）；
+3. `navigator.language`（`zh-CN`、`zh-TW`、`zh-Hans` 归到 `zh`，`en-*` 归到 `en`，
+   `ja-*` 归到 `ja`，`ko-*` 归到 `ko`）；
 4. 都没有时用英文页。
 
 几个刻意的约束：
 
-- **只有根页会跳转**，`/zh/`、`/en/` 的地址永远不变，分享出去的深链不会被改写
+- **只有根页会跳转**，`/zh/`、`/en/`、`/ja/`、`/ko/` 的地址永远不变，分享出去的深链不会被改写
   （所以 `?lang=` 只在根页有意义，内容页用页面上的切换链接）；
 - 跳转用 `location.replace`，不往浏览历史里塞一条中转页，返回键行为正常；
 - 语言切换是普通链接，**不依赖 JS**；JS 只负责把偏好写进 `localStorage`；
 - `localStorage` 不可用（隐私模式、被禁用）时静默降级，跳转照常工作；
-- 根页保留可见的双语链接与 `hreflang`，无 JS 与爬虫也能拿到入口。
+- 根页保留可见的四语链接与 `hreflang`，无 JS 与爬虫也能拿到入口。
 
 ## 新增一个项目
 
-改两个文件：`zh/index.html` 与 `en/index.html`，各自加一个 `<li>`：
+改四个内容页（`zh/`、`en/`、`ja/`、`ko/` 下的 `index.html`），各自加一个 `<li>`：
 
 ```html
 <li>

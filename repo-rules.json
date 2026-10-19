@@ -87,6 +87,8 @@
     "index.html",
     "zh/index.html",
     "en/index.html",
+    "ja/index.html",
+    "ko/index.html",
     "assets/site.js",
     "assets/style.css",
     "tests/site.test.js",

@@ -8,8 +8,10 @@
 
 - English: <https://yanxijian.github.io/en/>
 - 中文: <https://yanxijian.github.io/zh/>
+- 日本語: <https://yanxijian.github.io/ja/>
+- 한국어: <https://yanxijian.github.io/ko/>
 
-ビルド手順もサードパーティ依存も CDN もありません。静的ページ 3 枚、スタイルシート 1 枚、スクリプト 1 本だけで、GitHub Pages が `main` のルートからそのまま配信します（`.nojekyll` が Jekyll を無効にします）。
+ビルド手順もサードパーティ依存も CDN もありません。静的ページ 5 枚、スタイルシート 1 枚、スクリプト 1 本だけで、GitHub Pages が `main` のルートからそのまま配信します（`.nojekyll` が Jekyll を無効にします）。
 
 ## 構成
 
@@ -17,6 +19,8 @@
 index.html            ルートページ：言語の振り分けと、クリックできるリンク（JS が無くても動く）
 zh/index.html         中国語の索引
 en/index.html         英語の索引
+ja/index.html         日本語の索引
+ko/index.html         韓国語の索引
 assets/style.css      見た目（OS のカラースキームに追従し、CJK はシステムフォントを優先）
 assets/site.js        ルートの振り分けと選択言語の記憶
 tests/site.test.js    site.js の単体テスト
@@ -27,22 +31,23 @@ tests/site.test.js    site.js の単体テスト
 
 優先度の高い順：
 
-1. **ルート**ページの URL にある `?lang=zh` / `?lang=en`（例：`/?lang=en`）
+1. **ルート**ページの URL にある `?lang=zh` / `?lang=en` / `?lang=ja` / `?lang=ko`（例：`/?lang=ja`）
 2. 保存された `localStorage` の値（切り替えリンクを押したときに書かれる）
-3. `navigator.language`（`zh-CN`、`zh-TW`、`zh-Hans` はいずれも `zh`。`en-*` は `en`）
+3. `navigator.language`（`zh-CN`、`zh-TW`、`zh-Hans` は `zh`、`en-*` は `en`、
+   `ja-*` は `ja`、`ko-*` は `ko`）
 4. どれも無ければ英語
 
 意図した制約：
 
-- **振り分けるのはルートページだけ**です。`/zh/` と `/en/` は自分の URL を書き換えないので、共有された深いリンクは送った人の場所のまま残ります（つまり `?lang=` はルートページでのみ意味を持ち、内容ページは切り替えリンクを使います）。
+- **振り分けるのはルートページだけ**です。`/zh/`、`/en/`、`/ja/`、`/ko/` は自分の URL を書き換えないので、共有された深いリンクは送った人の場所のまま残ります（つまり `?lang=` はルートページでのみ意味を持ち、内容ページは切り替えリンクを使います）。
 - 振り分けは `location.replace` を使うので履歴を増やさず、戻るボタンも自然に動きます。
 - 言語の切り替えはただのリンクで、**JavaScript は要りません**。JS は選択を記録するだけです。
 - `localStorage` が使えない場合（プライベートモード、ストレージ無効）は黙って諦めます。
-- ルートページには目に見える二言語のリンクと `hreflang` の代替を残すので、クローラーや JS の無い訪問者にも入口があります。
+- ルートページには目に見える四言語のリンクと `hreflang` の代替を残すので、クローラーや JS の無い訪問者にも入口があります。
 
 ## プロジェクトの追加
 
-`zh/index.html` と `en/index.html` の 2 ファイルを編集し、それぞれに `<li>` を 1 つ足します：
+4 つの内容ページ（`zh/`、`en/`、`ja/`、`ko/` の `index.html`）を編集し、それぞれに `<li>` を 1 つ足します：
 
 ```html
 <li>
@@ -105,4 +110,4 @@ git config core.hooksPath .githooks
 
 - `zh-TW` / `zh-HK` は今のところ簡体字のページに着地します（繁体字の版はありません）。
 - このサイトは索引であり、README を**複製しません**。利点はドキュメントの二重管理が決して食い違わないこと、代償はリンクをたどるとこのサイトを離れることです。
-- この README は 4 言語で維持していますが、サイト自体が提供する言語は今のところ中文と English の 2 つです。
+- サイト自体も 4 言語（中文・English・日本語・한국어）を提供します。`zh-TW` / `zh-HK` は今も簡体字のページに着地します。

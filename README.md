@@ -8,8 +8,10 @@ Site: <https://yanxijian.github.io/>
 
 - English: <https://yanxijian.github.io/en/>
 - 中文: <https://yanxijian.github.io/zh/>
+- 日本語: <https://yanxijian.github.io/ja/>
+- 한국어: <https://yanxijian.github.io/ko/>
 
-No build step, no third-party dependencies, no CDN: three static pages, one stylesheet and one
+No build step, no third-party dependencies, no CDN: five static pages, one stylesheet and one
 script, served by GitHub Pages straight from the root of `main` (`.nojekyll` disables Jekyll).
 
 ## Layout
@@ -18,6 +20,8 @@ script, served by GitHub Pages straight from the root of `main` (`.nojekyll` dis
 index.html            root page: language redirect plus clickable links (works without JS)
 zh/index.html         Chinese index
 en/index.html         English index
+ja/index.html         Japanese index
+ko/index.html         Korean index
 assets/style.css      styling (follows the OS colour scheme, prefers system CJK fonts)
 assets/site.js        root redirect and remembered language
 tests/site.test.js    unit tests for site.js
@@ -28,25 +32,27 @@ tests/site.test.js    unit tests for site.js
 
 Highest priority first:
 
-1. `?lang=zh` / `?lang=en` in the **root** page URL (for example `/?lang=en`);
+1. `?lang=zh` / `?lang=en` / `?lang=ja` / `?lang=ko` in the **root** page URL
+   (for example `/?lang=ja`);
 2. the stored `localStorage` value (written when a switch link is clicked);
-3. `navigator.language` (`zh-CN`, `zh-TW`, `zh-Hans` all map to `zh`; `en-*` maps to `en`);
+3. `navigator.language` (`zh-CN`, `zh-TW`, `zh-Hans` map to `zh`; `en-*` to `en`;
+   `ja-*` to `ja`; `ko-*` to `ko`);
 4. English as the fallback.
 
 Deliberate constraints:
 
-- **Only the root page redirects.** `/zh/` and `/en/` never rewrite their own URL, so shared
+- **Only the root page redirects.** `/zh/`, `/en/`, `/ja/` and `/ko/` never rewrite their own URL, so shared
   deep links stay where the sender put them (which also means `?lang=` is only meaningful on the
   root page; content pages use the switch link).
 - The redirect uses `location.replace`, so it adds no history entry and the back button behaves.
 - Language switches are plain links and **do not require JavaScript**; JS only records the choice.
 - If `localStorage` is unavailable (private mode, disabled storage) it degrades silently.
-- The root page keeps visible bilingual links and `hreflang` alternates, so crawlers and no-JS
+- The root page keeps visible links in all four languages and `hreflang` alternates, so crawlers and no-JS
   visitors still get an entry point.
 
 ## Adding a project
 
-Edit two files, `zh/index.html` and `en/index.html`, and add one `<li>` to each:
+Edit the four content pages (`zh/`, `en/`, `ja/`, `ko/` `index.html`) and add one `<li>` to each:
 
 ```html
 <li>
