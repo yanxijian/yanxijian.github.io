@@ -5,6 +5,10 @@
 *.css    text eol=lf
 *.js     text eol=lf
 *.md     text eol=lf
+*.json   text eol=lf
+*.yml    text eol=lf
+*.sh     text eol=lf
 LICENSE  text eol=lf
 .gitattributes text eol=lf
 .nojekyll      text eol=lf
+.githooks/pre-commit text eol=lf

@@ -85,6 +85,29 @@ node --test
 仓库 Settings → Pages → Source: `Deploy from a branch` → `main` / `/ (root)`。
 因为 `.nojekyll` 存在，Pages 原样发布文件，不做 Jekyll 构建；推送 `main` 即生效。
 
+## 规范检查
+
+本仓接入 [RepoRules](https://github.com/yanxijian/RepoRules)，把能机械判断的部分固化：
+
+```bash
+python scripts/repo_rules.py check --config repo-rules.json
+```
+
+- 编码/行尾：`*.html`、`*.css`、`*.js`、`*.md`、`*.json`、`*.yml`、`*.sh` 无 BOM + LF；
+- 行宽：`*.js` 不超过 140 列；
+- 必需文件：三个页面、两个资源、测试、`.nojekyll`、`LICENSE` 等缺一即失败；
+- Markdown：本地链接必须能解析，`README.md` 与 `README.en.md` 必须互相出现对方文件名。
+
+装一次钩子（每份克隆各配一次）：
+
+```bash
+git config core.hooksPath .githooks
+```
+
+`scripts/repo_rules.py` 是随仓内置副本，**不要手改**；上游升级后在 RepoRules 检出里执行
+`python repo_rules.py sync --root <本仓> --hook` 同步。`.github/workflows/hygiene.yml`
+在每次推送时跑同样的检查，并校验内置副本没有落后（`sync --check`）。
+
 ## 已知取舍
 
 - `zh-TW` / `zh-HK` 目前归到简体中文页（没有单独的繁体版本）；

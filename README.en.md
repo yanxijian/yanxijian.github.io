@@ -91,6 +91,31 @@ Repository Settings → Pages → Source: `Deploy from a branch` → `main` / `/
 With `.nojekyll` present, Pages publishes the files as-is (no Jekyll build); pushing to `main`
 is enough to update the site.
 
+## Repository rules
+
+This repo is checked by [RepoRules](https://github.com/yanxijian/RepoRules), so the mechanical
+rules live in a program instead of in memory:
+
+```bash
+python scripts/repo_rules.py check --config repo-rules.json
+```
+
+- Encoding/EOL: `*.html`, `*.css`, `*.js`, `*.md`, `*.json`, `*.yml`, `*.sh` — no BOM, LF only;
+- Line width: `*.js` stays within 140 columns;
+- Required files: the three pages, both assets, the test, `.nojekyll` and `LICENSE` must exist;
+- Markdown: local links must resolve, and `README.md` / `README.en.md` must name each other.
+
+Install the hook once per clone:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+`scripts/repo_rules.py` is a vendored copy — **do not edit it by hand**. After a RepoRules
+release, run `python repo_rules.py sync --root <this repo> --hook` from a RepoRules checkout.
+`.github/workflows/hygiene.yml` runs the same checks on every push and fails if the vendored
+copy falls behind (`sync --check`).
+
 ## Known trade-offs
 
 - `zh-TW` / `zh-HK` currently land on the Simplified Chinese page (there is no Traditional build).

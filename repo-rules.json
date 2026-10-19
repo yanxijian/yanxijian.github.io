@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "skip_dirs": [
+    ".git"
+  ],
+  "skip_prefixes": [],
+  "skip_globs": [],
+  "encoding": [
+    {
+      "glob": "*.html",
+      "bom": false,
+      "eol": "lf"
+    },
+    {
+      "glob": "*.css",
+      "bom": false,
+      "eol": "lf"
+    },
+    {
+      "glob": "*.js",
+      "bom": false,
+      "eol": "lf"
+    },
+    {
+      "glob": "*.md",
+      "bom": false,
+      "eol": "lf"
+    },
+    {
+      "glob": "*.json",
+      "bom": false,
+      "eol": "lf"
+    },
+    {
+      "glob": "*.yml",
+      "bom": false,
+      "eol": "lf"
+    },
+    {
+      "glob": "*.sh",
+      "bom": false,
+      "eol": "lf"
+    },
+    {
+      "glob": ".gitattributes",
+      "bom": false,
+      "eol": "lf"
+    },
+    {
+      "glob": ".nojekyll",
+      "bom": false,
+      "eol": "lf"
+    },
+    {
+      "glob": "LICENSE",
+      "bom": false,
+      "eol": "lf"
+    },
+    {
+      "glob": "scripts/repo_rules.py",
+      "bom": false,
+      "eol": "lf"
+    },
+    {
+      "glob": ".githooks/pre-commit",
+      "bom": false,
+      "eol": "lf"
+    }
+  ],
+  "width": {
+    "globs": [
+      "*.js"
+    ],
+    "limit": 140,
+    "tab_width": 2
+  },
+  "forbidden": [],
+  "headers": {
+    "globs": [],
+    "first_line": "#pragma once",
+    "forbid_namespace_using": true
+  },
+  "versions": [],
+  "changelog": null,
+  "required_files": [
+    "README.md",
+    "README.en.md",
+    "index.html",
+    "zh/index.html",
+    "en/index.html",
+    "assets/site.js",
+    "assets/style.css",
+    "tests/site.test.js",
+    ".nojekyll",
+    "LICENSE",
+    "scripts/repo_rules.py",
+    ".githooks/pre-commit"
+  ],
+  "markdown": {
+    "globs": [
+      "*.md"
+    ],
+    "check_links": true,
+    "bilingual_pairs": [
+      [
+        "README.md",
+        "README.en.md"
+      ]
+    ]
+  },
+  "gitattributes": {
+    "path": ".gitattributes",
+    "required_patterns": [
+      "\\* text=auto",
+      "\\*\\.html\\s+text eol=lf",
+      "\\*\\.js\\s+text eol=lf",
+      "\\*\\.yml\\s+text eol=lf"
+    ]
+  }
+}
