@@ -126,6 +126,10 @@
       "\\*\\.py\\s+text eol=lf"
     ]
   },
+  "about": {
+    "description": "Personal project index with a bilingual landing page and browser-language detection | 个人项目索引：中英双语入口，按浏览器语言自动跳转",
+    "order": "en-zh"
+  },
   "commit_message": {
     "english": true
   },
